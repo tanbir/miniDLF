@@ -44,3 +44,13 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Sigmoid (activation)     | `Sigmoid()`                                                                      |
 | Tanh (activation)        | `Tanh()`                                                                         |
 | Softmax (activation)     | `Softmax()`                                                                      |
+
+## Optimization algorithms
+| Optimizer | Syntex to create an object                                              |
+|:----------|:------------------------------------------------------------------------|
+| SGD       | `SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)`                 |
+| Adagrad   | `Adagrad(lr=0.01, decay=1e-6, epsilon=1e-7)`                            |
+| RMSProp   | `RMSProp(lr=0.001, decay=1e-6, rho=0.9, epsilon=1e-6)`                  |
+| Adam      | `Adam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`    |
+| Nadam     | `Nadam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`   |
+| AMSGrad   | `AMSGrad(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)` |
