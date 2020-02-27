@@ -54,3 +54,17 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Adam      | `Adam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`    |
 | Nadam     | `Nadam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`   |
 | AMSGrad   | `AMSGrad(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)` |
+
+## Model function: Sequential
+| Function | Description                                                                       |
+|:---------|:----------------------------------------------------------------------------------|
+| Add      | `.add(layer)`                                                                     |
+| Compile  | `.compile(loss = 'cce')`                                                          |
+| Summary  | `.summary()`                                                                      |
+| Train    | `.fit(dataset, epochs, minibatch_size = 10, early_stop_after = 5, optimizer='amsgrad')`|
+
+* The parameter `layer` in the `add(...)` function is a layer-type object 
+* The parameter `loss` in the `compile(...)` function is one of 'mse' / 'cce' / 'bce'
+* The parameter `optimizer` in the `fit(...)` function can be either 
+  * an object with specified or default parameters or 
+  * a value from 'sgd'/'adagrad'/'rmsprop'/'adam'/'nadam'/'amsgrad'
