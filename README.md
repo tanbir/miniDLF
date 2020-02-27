@@ -30,9 +30,9 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 ### Recurrent layers
 | Layer                    | Syntex to create an object                                                       |
 |:-------------------------|:---------------------------------------------------------------------------------|
-| RNN                      | `Dense(size, input_shape=None, trainable=True)`                                  |
-| LSTM                     | `Conv2D(filters, kernel, stride=1, padding=0, input_shape=None, trainable=True)` |
-| GRU                      | `Pooling2D(size=2, stride=2, mode='max')`                                        |
+| RNN                      | `RNN(n_units, input_shape = None)`                                  |
+| LSTM                     | `LSTM(n_units, input_shape = None)`                                              |
+| GRU                      | `GRU(n_units, input_shape = None)`                                               |
 
 ### Activations
 | Layer                    | Syntex to create an object                                                       |
