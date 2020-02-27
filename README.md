@@ -36,6 +36,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 
 ### Activations
 | Layer                    | Syntex to create an object                                                       |
+|:-------------------------|:---------------------------------------------------------------------------------|
 | Activation               | `Activation(activation, alpha=0.0001, max_value=2.5, scale=1.0)`                 |
 | ReLU (activation)        | `ReLU(alpha=0.0, max_value=np.Infinity)`                                         |
 | Leaky-ReLU (activation)  | `ReLU(alpha, max_value)`                                                         |
