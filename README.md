@@ -1,1 +1,1 @@
-# miniDLF
+# miniDLF (Mini Deep Learning Framework)
