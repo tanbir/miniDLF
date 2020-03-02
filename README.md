@@ -135,3 +135,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Epoch 24: ====================================> loss: 0.03081 train_acc = 99.05% test_acc = 97.36% time: 23.40s
     Epoch 25: ====================================> loss: 0.02681 train_acc = 99.09% test_acc = 97.44% time: 23.03s
     Accuracy: Maximum=97.64%; With optimal loss=97.44%
+
+### 2.5.2 Convolutional Network using MNIST
+
+### 2.5.3 Recurrent Neural Networks
