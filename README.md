@@ -165,7 +165,19 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     m.fit(dataset=mnist, epochs=25, minibatch_size = 512, early_stop_after = 10)
  
 #### CPU output 
-
+    Conv2D     :   input_shape =  [ 1 28 28]  output_shape =  (32, 12, 12)  trainable parameters =  1184
+    Activation :   input_shape =  (32, 12, 12)  output_shape =  (32, 12, 12)  trainable parameters =  0
+    Pooling    :   input_shape =  (32, 12, 12)  output_shape =  (32, 6, 6)  trainable parameters =  0
+    Conv2D     :   input_shape =  (32, 6, 6)  output_shape =  (32, 2, 2)  trainable parameters =  9248
+    Activation :   input_shape =  (32, 2, 2)  output_shape =  (32, 2, 2)  trainable parameters =  0
+    Pooling    :   input_shape =  (32, 2, 2)  output_shape =  (32, 1, 1)  trainable parameters =  0
+    Flatten    :   input_shape =  (32, 1, 1)  output_shape =  (32,)  trainable parameters =  0
+    Dense      :   input_shape =  (32,)  output_shape =  (100,)  trainable parameters =  3300
+    Activation :   input_shape =  (100,)  output_shape =  (100,)  trainable parameters =  0
+    BatchNorm  :   input_shape =  (100,)  output_shape =  (100,)  trainable parameters =  200
+    Dense      :   input_shape =  (100,)  output_shape =  (10,)  trainable parameters =  1010
+    Activation :   input_shape =  (10,)  output_shape =  (10,)  trainable parameters =  0
+    Total # trainable parameters: 14942
 
 
 ### 2.5.3 Recurrent Neural Networks
