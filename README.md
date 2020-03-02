@@ -162,7 +162,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     m.compile(loss='cce', optimizer=Adam())
     m.summary()
 
-    m.fit(dataset=mnist, epochs=10, minibatch_size = 512, early_stop_after = 10)
+    m.fit(dataset=mnist, epochs=11, minibatch_size = 512, early_stop_after = 10)
  
 #### CPU output 
     Conv2D     :   input_shape =  [ 1 28 28]  output_shape =  (32, 12, 12)  trainable parameters =  1184
@@ -185,5 +185,10 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Epoch 04: ===================================> loss: 0.16735 train_acc = 95.65% test_acc = 95.80% time: 187.31s
     Epoch 05: ===================================> loss: 0.14283 train_acc = 96.14% test_acc = 96.38% time: 189.34s
     Epoch 06: ===================================> loss: 0.12652 train_acc = 96.53% test_acc = 96.64% time: 187.18s
+    Epoch 07: ===================================> loss: 0.11313 train_acc = 96.77% test_acc = 96.78% time: 189.46s
+    Epoch 08: ===================================> loss: 0.17498 train_acc = 92.46% test_acc = 93.00% time: 188.45s
+    Epoch 09: ===================================> loss: 0.15132 train_acc = 96.22% test_acc = 96.12% time: 186.56s
+    Epoch 10: ===================================> loss: 0.11911 train_acc = 96.66% test_acc = 96.86% time: 187.46s
+    Epoch 11: ===================================> loss: 0.10841 train_acc = 96.88% test_acc = 96.79% time: 186.77s
 
 ### 2.5.3 Recurrent Neural Networks
