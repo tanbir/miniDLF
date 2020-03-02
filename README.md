@@ -162,7 +162,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     m.compile(loss='cce', optimizer=Adam())
     m.summary()
 
-    m.fit(dataset=mnist, epochs=12, minibatch_size = 512, early_stop_after = 10)
+    m.fit(dataset=mnist, epochs=13, minibatch_size = 512, early_stop_after = 10)
  
 #### CPU output 
     Conv2D     :   input_shape =  [ 1 28 28]  output_shape =  (32, 12, 12)  trainable parameters =  1184
@@ -179,18 +179,19 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Activation :   input_shape =  (10,)  output_shape =  (10,)  trainable parameters =  0
     Total # trainable parameters: 14942
 
-    Epoch 01: ===================================> loss: 1.08035 train_acc = 85.71% test_acc = 87.06% time: 185.34s
-    Epoch 02: ===================================> loss: 0.33217 train_acc = 92.64% test_acc = 93.25% time: 185.48s
-    Epoch 03: ===================================> loss: 0.21521 train_acc = 94.56% test_acc = 95.08% time: 188.01s
-    Epoch 04: ===================================> loss: 0.16735 train_acc = 95.65% test_acc = 95.80% time: 187.31s
-    Epoch 05: ===================================> loss: 0.14283 train_acc = 96.14% test_acc = 96.38% time: 189.34s
-    Epoch 06: ===================================> loss: 0.12652 train_acc = 96.53% test_acc = 96.64% time: 187.18s
-    Epoch 07: ===================================> loss: 0.11313 train_acc = 96.77% test_acc = 96.78% time: 189.46s
-    Epoch 08: ===================================> loss: 0.17498 train_acc = 92.46% test_acc = 93.00% time: 188.45s
-    Epoch 09: ===================================> loss: 0.15132 train_acc = 96.22% test_acc = 96.12% time: 186.56s
-    Epoch 10: ===================================> loss: 0.11911 train_acc = 96.66% test_acc = 96.86% time: 187.46s
-    Epoch 11: ===================================> loss: 0.10841 train_acc = 96.88% test_acc = 96.79% time: 186.77s
-    Epoch 12: ===================================> loss: 0.10173 train_acc = 97.12% test_acc = 97.00% time: 190.63s
-    Accuracy: Maximum=97.00%; With optimal loss=97.00%
+    Epoch 01: =======================================> loss: 1.08035 train_acc = 85.71% test_acc = 87.06% time: 185.34s
+    Epoch 02: =======================================> loss: 0.33217 train_acc = 92.64% test_acc = 93.25% time: 185.48s
+    Epoch 03: =======================================> loss: 0.21521 train_acc = 94.56% test_acc = 95.08% time: 188.01s
+    Epoch 04: =======================================> loss: 0.16735 train_acc = 95.65% test_acc = 95.80% time: 187.31s
+    Epoch 05: =======================================> loss: 0.14283 train_acc = 96.14% test_acc = 96.38% time: 189.34s
+    Epoch 06: =======================================> loss: 0.12652 train_acc = 96.53% test_acc = 96.64% time: 187.18s
+    Epoch 07: =======================================> loss: 0.11313 train_acc = 96.77% test_acc = 96.78% time: 189.46s
+    Epoch 08: =======================================> loss: 0.17498 train_acc = 92.46% test_acc = 93.00% time: 188.45s
+    Epoch 09: =======================================> loss: 0.15132 train_acc = 96.22% test_acc = 96.12% time: 186.56s
+    Epoch 10: =======================================> loss: 0.11911 train_acc = 96.66% test_acc = 96.86% time: 187.46s
+    Epoch 11: =======================================> loss: 0.10841 train_acc = 96.88% test_acc = 96.79% time: 186.77s
+    Epoch 12: =======================================> loss: 0.10173 train_acc = 97.12% test_acc = 97.00% time: 190.63s
+    Epoch 13: =======================================> loss: 0.09665 train_acc = 97.22% test_acc = 97.26% time: 190.30s
+    Accuracy: Maximum=97.26%; With optimal loss=97.26%
 
 ### 2.5.3 Recurrent Neural Networks
