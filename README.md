@@ -1,11 +1,11 @@
 # miniDLF 
 (Mini Deep Learning Framework)
 
-# 1. Introduction
+# 1 Introduction
 
 This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.github.io/)) to implement a simple Numpy-based <a hraf=https://keras.io/ target=blank>Keras</a>-like framework for designing Neural Networks. This is not intended to be used for your production environment. But feel free to use it for learning and development. Plenty of room for code-optimization.  
 
-# 2/ Framework 
+# 2 Framework 
 
 ## 2.1 Network architectures
 * Feedforward Neural Network 
@@ -69,8 +69,8 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * an object with specified or default parameters or 
   * a value from 'sgd'/'adagrad'/'rmsprop'/'adam'/'nadam'/'amsgrad'/'adadelta'
 
-## 3. Some example runs
-### 3.1 Multilayer Perceptron using MNIST
+## 2.5 Some example runs
+### 2.5.1 Multilayer Perceptron using MNIST
     from miniDLF.models import Sequential
     from miniDLF.layers import Dense, Dropout, Activation
     from miniDLF.optimizers import Adam
