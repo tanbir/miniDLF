@@ -1,21 +1,21 @@
 # miniDLF 
 (Mini Deep Learning Framework)
 
-# Introduction
+# 1. Introduction
 
 This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.github.io/)) to implement a simple Numpy-based <a hraf=https://keras.io/ target=blank>Keras</a>-like framework for designing Neural Networks. This is not intended to be used for your production environment. But feel free to use it for learning and development. Plenty of room for code-optimization.  
 
-# Contents 
+# 2/ Framework 
 
-## Network architectures
+## 2.1 Network architectures
 * Feedforward Neural Network 
 * Convolutional Neural Network 
 * Recurrent Neural Network
 * Gated Recurrent Units (GRU)
 * Long Short Term Memomry Units (LSTM)
 
-## Layers
-### Core layers
+## 2.2 Layers
+### 2.2.1 Core layers
 | Layer                    | Syntex to create an object                                                       |
 |:-------------------------|:---------------------------------------------------------------------------------|
 | Dense                    | `Dense(size, input_shape=None, trainable=True)`                                  |
@@ -27,14 +27,14 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Dropout                  | `Dropout(p_dropout)`                                                             |
 | BatchNormalization       | `BatchNormalization(momentum=.9, scale=True, center=True)`                       |
 
-### Recurrent layers
+### 2.2.2 Recurrent layers
 | Layer                    | Syntex to create an object                                                       |
 |:-------------------------|:---------------------------------------------------------------------------------|
 | RNN                      | `RNN(n_units, input_shape = None)`                                  |
 | LSTM                     | `LSTM(n_units, input_shape = None)`                                              |
 | GRU                      | `GRU(n_units, input_shape = None)`                                               |
 
-### Activations
+### 2.2.3 Activations
 | Layer                    | Syntex to create an object                                                       |
 |:-------------------------|:---------------------------------------------------------------------------------|
 | Activation               | `Activation(activation, alpha=0.0001, max_value=2.5, scale=1.0)`                 |
@@ -45,7 +45,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Tanh (activation)        | `Tanh()`                                                                         |
 | Softmax (activation)     | `Softmax()`                                                                      |
 
-## Optimization algorithms
+## 2.3 Optimization algorithms
 | Optimizer | Syntex to create an object                                              |
 |:----------|:------------------------------------------------------------------------|
 | SGD       | `SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)`                 |
@@ -55,7 +55,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Nadam     | `Nadam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`   |
 | AMSGrad   | `AMSGrad(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)` |
 
-## Model function: Sequential
+## 2.4 Model function: Sequential
 | Function | Description                                                                       |
 |:---------|:----------------------------------------------------------------------------------|
 | Add      | `.add(layer)`                                                                     |
@@ -69,8 +69,8 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * an object with specified or default parameters or 
   * a value from 'sgd'/'adagrad'/'rmsprop'/'adam'/'nadam'/'amsgrad'/'adadelta'
 
-## Some example runs
-### Multilayer Perceptron using MNIST
+## 3. Some example runs
+### 3.1 Multilayer Perceptron using MNIST
     from miniDLF.models import Sequential
     from miniDLF.layers import Dense, Dropout, Activation
     from miniDLF.optimizers import Adam
