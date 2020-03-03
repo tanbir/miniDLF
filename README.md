@@ -10,6 +10,8 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 * [2 Layers](#2-layers)
   * [2.1 Core layers](#21-core-layers)
   * [2.2 Recurrent layers](#22-recurrent-layers)  
+  * [2.3 Activation layers](#23-activations)    
+* [3 Optimization algorithms](#3-optimization-algorithms)    
 
 # 1 Network architectures
 * Feedforward Neural Network 
