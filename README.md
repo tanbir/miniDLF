@@ -219,7 +219,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 
     m.fit(dataset=d, epochs=1000, minibatch_size = 30, accuracy_threshold=0.96, early_stop_after = 30)
     
-#### CPU output
+#### CPU output (stacked RNNs)
 
     None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
     None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
@@ -250,3 +250,28 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Terminating early (training accuracy threshold reached)
     Accuracy: Maximum=94.52%; With optimal loss=94.26%
     
+#### Some sequence outputs
+
+    X = er. Each node (neuron) has a time-varying real-val
+    y = r. Each node (neuron) has a time-varying real-valu
+    p =    Each node (neuron) has a time-varying real-valu
+
+    X = e input sequence is a speech signal corresponding 
+    y =  input sequence is a speech signal corresponding t
+    p =  in ut stquence is a speech signal corresponding t
+
+    X = sults), or hidden nodes (that modify the data en r
+    y = ults), or hidden nodes (that modify the data en ro
+    p =  pte), sr hidden nodes (that modify the data en ro
+
+    X = crete time settings, sequences of real-valued inpu
+    y = rete time settings, sequences of real-valued input
+    p = eets time settings, sequences of real-valued input
+
+    X = its that connect to it. Supervisor-given target ac
+    y = ts that connect to it. Supervisor-given target act
+    p = nh ihet connect to it. Supervisor-given target act
+
+    X =  at the end of the sequence may be a label classif
+    y = at the end of the sequence may be a label classify
+    p = o  the inv of the sequence may be a label classify
