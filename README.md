@@ -197,3 +197,21 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Accuracy: Maximum=97.36%; With optimal loss=97.16%
 
 ### 2.5.3 Recurrent Neural Networks
+
+    import numpy as np
+    from miniDLF.models import Sequential
+    from miniDLF.layers import RNN, GRU, LSTM
+    from miniDLF.optimizers import Adam
+    from miniDLF.datasets import TEXT2SEQ
+
+
+
+    d = TEXT2SEQ('./data/TEXT/basic_rnn.txt', 50) # taken from wikipedia
+
+    m = Sequential() 
+    m.add(GRU(256, input_shape=d.input_shape))
+    m.add(Activation('softmax'))
+    m.compile(loss='cce', optimizer=Adam())
+    m.summary()
+
+    m.fit(dataset=d, epochs=1000, minibatch_size = 30, accuracy_threshold=0.99, early_stop_after = 30)
