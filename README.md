@@ -6,7 +6,7 @@
 This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.github.io/)) to implement a simple Numpy-based <a hraf=https://keras.io/ target=blank>Keras</a>-like framework for designing Neural Networks. This is not intended to be used for your production environment. But feel free to use it for learning and development. Plenty of room for code-optimization.  
 
 # Contents
-[Read our installation guide](#installation-guide)
+[2.1 Network architectures](#architectures)
 
 # 2 Framework 
 
