@@ -218,3 +218,42 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     
 #### CPU output
 
+    None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
+    None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
+    Activation :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  0
+    Total # trainable parameters: 173650
+    
+    Epoch 01: =======================================> loss: 79.58014 train_acc = 41.95% test_acc = 41.38% time: 5.65s
+    Epoch 02: =======================================> loss: 51.26008 train_acc = 58.78% test_acc = 57.52% time: 5.53s
+    Epoch 03: =======================================> loss: 37.51728 train_acc = 70.05% test_acc = 68.64% time: 5.47s
+    Epoch 04: =======================================> loss: 28.59178 train_acc = 79.13% test_acc = 78.16% time: 5.48s
+    Epoch 05: =======================================> loss: 22.75608 train_acc = 82.78% test_acc = 81.97% time: 5.42s
+    Epoch 06: =======================================> loss: 18.37589 train_acc = 87.03% test_acc = 86.48% time: 5.54s
+    Epoch 07: =======================================> loss: 15.39899 train_acc = 89.66% test_acc = 88.60% time: 5.40s
+    Epoch 08: =======================================> loss: 12.81228 train_acc = 91.36% test_acc = 90.10% time: 5.43s
+    Epoch 09: =======================================> loss: 11.33098 train_acc = 92.21% test_acc = 91.01% time: 5.53s
+    Epoch 10: =======================================> loss: 10.37560 train_acc = 92.61% test_acc = 91.41% time: 5.73s
+    Epoch 11: =======================================> loss: 9.72039 train_acc = 92.80% test_acc = 91.58% time: 5.67s
+    Epoch 12: =======================================> loss: 9.14157 train_acc = 92.89% test_acc = 91.10% time: 5.61s
+    Epoch 13: =======================================> loss: 8.78029 train_acc = 93.26% test_acc = 91.58% time: 5.50s
+    Epoch 14: =======================================> loss: 8.28185 train_acc = 93.79% test_acc = 91.68% time: 5.54s
+    Epoch 15: =======================================> loss: 7.70620 train_acc = 93.93% test_acc = 92.02% time: 5.54s
+    Epoch 16: =======================================> loss: 7.30073 train_acc = 94.41% test_acc = 92.38% time: 5.53s
+    Epoch 17: =======================================> loss: 6.86051 train_acc = 94.61% test_acc = 92.51% time: 5.37s
+    Epoch 18: =======================================> loss: 6.54401 train_acc = 94.63% test_acc = 92.50% time: 5.55s
+    Epoch 19: =======================================> loss: 6.26852 train_acc = 94.87% test_acc = 92.68% time: 5.58s
+    Epoch 20: =======================================> loss: 5.97287 train_acc = 95.13% test_acc = 92.71% time: 5.54s
+    Epoch 21: =======================================> loss: 5.62362 train_acc = 95.18% test_acc = 92.69% time: 5.49s
+    Epoch 22: =======================================> loss: 5.54973 train_acc = 95.30% test_acc = 92.90% time: 5.61s
+    Epoch 23: =======================================> loss: 5.37522 train_acc = 95.46% test_acc = 93.16% time: 5.41s
+    Epoch 24: =======================================> loss: 5.16950 train_acc = 95.56% test_acc = 93.08% time: 5.37s
+    Epoch 25: =======================================> loss: 5.01057 train_acc = 95.65% test_acc = 93.06% time: 5.49s
+    Epoch 26: =======================================> loss: 4.86066 train_acc = 95.76% test_acc = 93.27% time: 5.53s
+    Epoch 27: =======================================> loss: 4.74742 train_acc = 95.93% test_acc = 93.27% time: 5.61s
+    Epoch 28: =======================================> loss: 4.54673 train_acc = 95.90% test_acc = 93.19% time: 5.50s
+    Epoch 29: =======================================> loss: 4.47867 train_acc = 95.94% test_acc = 93.20% time: 5.54s
+    Epoch 30: =======================================> loss: 4.38959 train_acc = 96.00% test_acc = 93.21% time: 5.47s
+    Epoch 31: =======================================> loss: 4.25650 train_acc = 96.08% test_acc = 93.36% time: 5.43s
+    Terminating early (training accuracy threshold reached)
+    Accuracy: Maximum=93.36%; With optimal loss=93.36%
+    
