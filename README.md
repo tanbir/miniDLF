@@ -5,10 +5,11 @@
 
 This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.github.io/)) to implement a simple Numpy-based <a hraf=https://keras.io/ target=blank>Keras</a>-like framework for designing Neural Networks. This is not intended to be used for your production environment. But feel free to use it for learning and development. Plenty of room for code-optimization.  
 
-# Contents
+# Content
 * [1 Network architectures](#1-network-architectures)
 * [2 Layers](#2-layers)
-  * [2 Layers](#2-layers)
+  * [2.1 Core layers](#21-core-layers)
+  * [2.2 Recurrent layers](#22-recurrent-layers)  
 
 # 1 Network architectures
 * Feedforward Neural Network 
