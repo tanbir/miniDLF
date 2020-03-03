@@ -1,24 +1,23 @@
 # miniDLF 
 (Mini Deep Learning Framework)
 
-# 1 Introduction
+# Introduction
 
 This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.github.io/)) to implement a simple Numpy-based <a hraf=https://keras.io/ target=blank>Keras</a>-like framework for designing Neural Networks. This is not intended to be used for your production environment. But feel free to use it for learning and development. Plenty of room for code-optimization.  
 
 # Contents
-[2.1 Network architectures](#21-network-architectures)
+[1 Network architectures](#1-network-architectures)
+[2 Layers](#2-layers)
 
-# 2 Framework 
-
-## 2.1 Network architectures
+# 1 Network architectures
 * Feedforward Neural Network 
 * Convolutional Neural Network 
 * Recurrent Neural Network
 * Gated Recurrent Units (GRU)
 * Long Short Term Memomry Units (LSTM)
 
-## 2.2 Layers
-### 2.2.1 Core layers
+# 2 Layers
+## 2.1 Core layers
 | Layer                    | Syntex to create an object                                                       |
 |:-------------------------|:---------------------------------------------------------------------------------|
 | Dense                    | `Dense(size, input_shape=None, trainable=True)`                                  |
@@ -30,14 +29,14 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Dropout                  | `Dropout(p_dropout)`                                                             |
 | BatchNormalization       | `BatchNormalization(momentum=.9, scale=True, center=True)`                       |
 
-### 2.2.2 Recurrent layers
+## 2.2 Recurrent layers
 | Layer                    | Syntex to create an object                                                       |
 |:-------------------------|:---------------------------------------------------------------------------------|
 | RNN                      | `RNN(n_units, input_shape = None)`                                  |
 | LSTM                     | `LSTM(n_units, input_shape = None)`                                              |
 | GRU                      | `GRU(n_units, input_shape = None)`                                               |
 
-### 2.2.3 Activations
+## 2.3 Activations
 | Layer                    | Syntex to create an object                                                       |
 |:-------------------------|:---------------------------------------------------------------------------------|
 | Activation               | `Activation(activation, alpha=0.0001, max_value=2.5, scale=1.0)`                 |
@@ -48,7 +47,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Tanh (activation)        | `Tanh()`                                                                         |
 | Softmax (activation)     | `Softmax()`                                                                      |
 
-## 2.3 Optimization algorithms
+# 3 Optimization algorithms
 | Optimizer | Syntex to create an object                                              |
 |:----------|:------------------------------------------------------------------------|
 | SGD       | `SGD(lr=0.01, decay=1e-6, momentum=0.9, nesterov=True)`                 |
@@ -58,7 +57,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Nadam     | `Nadam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`   |
 | AMSGrad   | `AMSGrad(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)` |
 
-## 2.4 Model function: Sequential
+# 4 Model function: Sequential
 | Function | Description                                                                       |
 |:---------|:----------------------------------------------------------------------------------|
 | Add      | `.add(layer)`                                                                     |
@@ -72,8 +71,8 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * an object with specified or default parameters or 
   * a value from 'sgd'/'adagrad'/'rmsprop'/'adam'/'nadam'/'amsgrad'/'adadelta'
 
-## 2.5 Some example runs
-### 2.5.1 Multilayer Perceptron using MNIST
+# 5 Some example runs
+## 5.1 Multilayer Perceptron using MNIST
     from miniDLF.models import Sequential
     from miniDLF.layers import Dense, Dropout, Activation
     from miniDLF.optimizers import Adam
@@ -98,7 +97,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 
     m.fit(dataset=mnist, epochs=25, minibatch_size = 512, early_stop_after = 10)
  
-#### CPU output 
+### CPU output 
     Dense      :   input_shape =  [784]  output_shape =  (400,)  trainable parameters =  314000
     Activation :   input_shape =  (400,)  output_shape =  (400,)  trainable parameters =  0
     Dropout    :   input_shape =  (400,)  output_shape =  (400,)  trainable parameters =  0
@@ -139,7 +138,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Epoch 25: ===================================> loss: 0.02681 train_acc = 99.09% test_acc = 97.44% time: 23.03s
     Accuracy: Maximum=97.64%; With optimal loss=97.44%
 
-### 2.5.2 Convolutional Network using MNIST
+## 5.2 Convolutional Network using MNIST
     from miniDLF.models import Sequential
     from miniDLF.layers import *
     from miniDLF.optimizers import *
@@ -167,7 +166,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 
     m.fit(dataset=mnist, epochs=15, minibatch_size = 512, early_stop_after = 10)
  
-#### CPU output 
+### CPU output 
     Conv2D     :   input_shape =  [ 1 28 28]  output_shape =  (32, 12, 12)  trainable parameters =  1184
     Activation :   input_shape =  (32, 12, 12)  output_shape =  (32, 12, 12)  trainable parameters =  0
     Pooling    :   input_shape =  (32, 12, 12)  output_shape =  (32, 6, 6)  trainable parameters =  0
@@ -199,9 +198,9 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Epoch 15: ==================================> loss: 0.11496 train_acc = 97.24% test_acc = 97.36% time: 187.97s
     Accuracy: Maximum=97.36%; With optimal loss=97.16%
 
-### 2.5.3 Recurrent Neural Networks
+## 5.3 Recurrent Neural Networks
 
-#### RNN
+### RNN
     import numpy as np
     from miniDLF.models import Sequential
     from miniDLF.layers import RNN, GRU, LSTM, Activation
@@ -219,7 +218,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 
     m.fit(dataset=d, epochs=1000, minibatch_size = 30, accuracy_threshold=0.96, early_stop_after = 30)
     
-##### CPU output (stacked RNNs)
+#### CPU output (stacked RNNs)
 
     None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  304681
     None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  304681
@@ -261,7 +260,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Terminating early (training accuracy threshold reached)
     Accuracy: Maximum=93.53%; With optimal loss=92.79%
     
-##### Some sequence outputs
+#### Some sequence outputs
 
     X = er. Each node (neuron) has a time-varying real-val
     y = r. Each node (neuron) has a time-varying real-valu
@@ -287,7 +286,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     y = at the end of the sequence may be a label classify
     p = o  the inv of the sequence may be a label classify
 
-#### GRU
+### GRU
     import numpy as np
     from miniDLF.models import Sequential
     from miniDLF.layers import RNN, GRU, LSTM, Activation
@@ -304,7 +303,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     
     m.fit(dataset=d, epochs=1000, minibatch_size = 50, accuracy_threshold=0.96, early_stop_after = 30)
     
-##### CPU output (GRU)    
+#### CPU output (GRU)    
     None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  871977
     Activation :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  0
     Total # trainable parameters: 871977
