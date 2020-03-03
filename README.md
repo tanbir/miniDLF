@@ -8,7 +8,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 # Contents
 * [1 Network architectures](#1-network-architectures)
 * [2 Layers](#2-layers)
-   * [2 Layers](#2-layers)
+  * [2 Layers](#2-layers)
 
 # 1 Network architectures
 * Feedforward Neural Network 
