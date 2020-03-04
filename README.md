@@ -207,11 +207,13 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 ### RNN
     import numpy as np
     from miniDLF.models import Sequential
-    from miniDLF.layers import RNN, GRU, LSTM, Activation
+    from miniDLF.layers import RNN, Activation
     from miniDLF.optimizers import Adam
     from miniDLF.datasets import TEXT2SEQ
-    
-    d = TEXT2SEQ('./data/TEXT/basic_rnn.txt', 50)  # extracted from wikipedia
+
+
+
+    d = TEXT2SEQ('./data/TEXT/basic_rnn.txt', 60)
 
     m = Sequential() 
     m.add(RNN(256, input_shape=d.input_shape))
@@ -219,68 +221,44 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     m.add(RNN(256, input_shape=d.input_shape))
     m.add(RNN(256, input_shape=d.input_shape))
     m.add(RNN(256, input_shape=d.input_shape))
+
     m.add(Activation('softmax'))
     m.compile(loss='cce', optimizer=Adam())
     m.summary()
 
-    m.fit(dataset=d, epochs=1000, minibatch_size = 50, accuracy_threshold=0.96, early_stop_after = 30)
+    m.fit(dataset=d, epochs=1000, minibatch_size = 25, accuracy_threshold=0.96, early_stop_after = 30)
     
 #### CPU output (stacked RNNs)
-
-    None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
-    None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
-    None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
-    None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
-    None :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  86825
-    Activation :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  0
+    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
+    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
+    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
+    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
+    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
+    Activation :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  0
     Total # trainable parameters: 434125
-    
-    Epoch 01: ==========================> loss: 155.87648 train_acc = 22.53% test_acc = 22.16% time: 11.55s
-    Epoch 02: ==========================> loss: 123.03908 train_acc = 41.48% test_acc = 39.54% time: 11.38s
-    Epoch 03: ==========================> loss: 86.84597 train_acc = 60.18% test_acc = 57.75% time: 11.25s
-    Epoch 04: ==========================> loss: 57.07525 train_acc = 76.93% test_acc = 74.51% time: 11.22s
-    Epoch 05: ==========================> loss: 34.75824 train_acc = 88.10% test_acc = 86.69% time: 11.37s
-    Epoch 06: ==========================> loss: 21.97068 train_acc = 92.24% test_acc = 91.45% time: 11.52s
-    Epoch 07: ==========================> loss: 16.12855 train_acc = 93.59% test_acc = 92.73% time: 11.73s
-    Epoch 08: ==========================> loss: 13.02808 train_acc = 94.46% test_acc = 93.20% time: 11.68s
-    Epoch 09: ==========================> loss: 11.11184 train_acc = 94.79% test_acc = 93.58% time: 11.41s
-    Epoch 10: ==========================> loss: 10.02639 train_acc = 95.01% test_acc = 93.65% time: 11.53s
-    Epoch 11: ==========================> loss: 9.26971 train_acc = 95.46% test_acc = 93.87% time: 11.71s
-    Epoch 12: ==========================> loss: 8.71420 train_acc = 95.44% test_acc = 93.92% time: 11.67s
-    Epoch 13: ==========================> loss: 8.37305 train_acc = 95.61% test_acc = 93.90% time: 11.65s
-    Epoch 14: ==========================> loss: 7.90221 train_acc = 95.90% test_acc = 94.07% time: 11.63s
-    Epoch 15: ==========================> loss: 7.59256 train_acc = 95.81% test_acc = 93.84% time: 11.78s
-    Epoch 16: ==========================> loss: 7.36513 train_acc = 95.96% test_acc = 93.99% time: 11.41s
-    Epoch 17: ==========================> loss: 7.09951 train_acc = 95.84% test_acc = 93.97% time: 11.35s
-    Epoch 18: ==========================> loss: 6.96996 train_acc = 96.02% test_acc = 93.97% time: 11.48s
+
+    Epoch 01: ==========================> loss: 67.07430 train_acc = 43.86% test_acc = 43.69% time: 18.24s
+    Epoch 02: ==========================> loss: 33.96766 train_acc = 76.54% test_acc = 76.46% time: 18.17s
+    Epoch 03: ==========================> loss: 14.29152 train_acc = 91.95% test_acc = 91.74% time: 18.20s
+    Epoch 04: ==========================> loss: 7.30623 train_acc = 94.94% test_acc = 94.20% time: 17.82s
+    Epoch 05: ==========================> loss: 5.45037 train_acc = 95.42% test_acc = 94.70% time: 17.81s
+    Epoch 06: ==========================> loss: 4.60923 train_acc = 95.75% test_acc = 94.84% time: 18.28s
+    Epoch 07: ==========================> loss: 4.04447 train_acc = 96.03% test_acc = 94.98% time: 18.19s
     Terminating early (training accuracy threshold reached)
-    Accuracy: Maximum=94.07%; With optimal loss=93.97%
+    Accuracy: Maximum=94.98%; With optimal loss=94.98%
     
 #### Some sequence outputs
+    X = ences its input stream through output units connected to act
+    y = nces its input stream through output units connected to actu
+    p =   e  ons input stream through output units connected to actu
 
-    X = er. Each node (neuron) has a time-varying real-val
-    y = r. Each node (neuron) has a time-varying real-valu
-    p =    Each node (neuron) has a time-varying real-valu
+    X = with a directed (one-way) connection to every other node in 
+    y = ith a directed (one-way) connection to every other node in t
+    p = evh t directed (one-way) connection to every other node in t
 
-    X = e input sequence is a speech signal corresponding 
-    y =  input sequence is a speech signal corresponding t
-    p =  in ut stquence is a speech signal corresponding t
-
-    X = sults), or hidden nodes (that modify the data en r
-    y = ults), or hidden nodes (that modify the data en ro
-    p =  pte), sr hidden nodes (that modify the data en ro
-
-    X = crete time settings, sequences of real-valued inpu
-    y = rete time settings, sequences of real-valued input
-    p = eets time settings, sequences of real-valued input
-
-    X = its that connect to it. Supervisor-given target ac
-    y = ts that connect to it. Supervisor-given target act
-    p = nh ihet connect to it. Supervisor-given target act
-
-    X =  at the end of the sequence may be a label classif
-    y = at the end of the sequence may be a label classify
-    p = o  the inv of the sequence may be a label classify
+    X =  progress is measured with the number of points won. Each se
+    y = progress is measured with the number of points won. Each seq
+    p = aeomhess is measured with the number of points won. Each seq
 
 
 ### LSTM
