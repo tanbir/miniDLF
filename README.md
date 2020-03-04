@@ -326,27 +326,27 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     d = TEXT2SEQ('./data/TEXT/basic_rnn_from_wiki.txt', 60)
 
     m = Sequential() 
-    m.add(GRU(256, input_shape=d.input_shape))
-    m.add(GRU(256, input_shape=d.input_shape))
+    m.add(GRU(256, input_shape=d.input_shape))    
 
     m.add(Activation('softmax'))
     m.compile(loss='cce', optimizer=Adam())
     m.summary()
     
-    m.fit(dataset=d, epochs=1000, minibatch_size = 25, accuracy_threshold=0.96, early_stop_after = 30)
+    m.fit(dataset=d, epochs=1000, minibatch_size = 25, accuracy_threshold=0.95, early_stop_after = 30)
     
 #### CPU output (Stacked GRUs)    
     GRU        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  241451
-    GRU        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  241451
     Activation :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  0
-    Total # trainable parameters: 482902
+    Total # trainable parameters: 241451
     
-    Epoch 01: ====================> loss: 60.10123 train_acc = 60.37% test_acc = 59.69% time: 36.34s
-    Epoch 02: ====================> loss: 24.72527 train_acc = 87.19% test_acc = 86.33% time: 36.33s
-    Epoch 03: ====================> loss: 10.45947 train_acc = 94.04% test_acc = 93.59% time: 37.30s
-    Epoch 04: ====================> loss: 6.34567 train_acc = 95.38% test_acc = 94.95% time: 37.26s
-    Epoch 05: ====================> loss: 4.87650 train_acc = 95.72% test_acc = 95.21% time: 36.91s
-    Epoch 06: ====================> loss: 4.23323 train_acc = 96.13% test_acc = 95.57% time: 36.89s
+    Epoch 01: ====================> loss: 61.40361 train_acc = 49.84% test_acc = 49.91% time: 18.78s
+    Epoch 02: ====================> loss: 36.44772 train_acc = 68.11% test_acc = 68.13% time: 18.70s
+    Epoch 03: ====================> loss: 23.07642 train_acc = 81.48% test_acc = 81.07% time: 19.51s
+    Epoch 04: ====================> loss: 14.29644 train_acc = 90.41% test_acc = 89.94% time: 21.21s
+    Epoch 05: ====================> loss: 9.26848 train_acc = 93.22% test_acc = 92.83% time: 19.77s
+    Epoch 06: ====================> loss: 6.98398 train_acc = 94.34% test_acc = 94.08% time: 19.18s
+    Epoch 07: ====================> loss: 5.96353 train_acc = 94.86% test_acc = 94.32% time: 21.44s
+    Epoch 08: ====================> loss: 5.32681 train_acc = 95.13% test_acc = 94.70% time: 20.39s
     Terminating early (training accuracy threshold reached)
-    Accuracy: Maximum=95.57%; With optimal loss=95.57%
+    Accuracy: Maximum=94.70%; With optimal loss=94.70%
               
