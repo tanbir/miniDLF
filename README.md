@@ -217,33 +217,29 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     m.add(RNN(256, input_shape=d.input_shape))
     m.add(RNN(256, input_shape=d.input_shape))
     m.add(RNN(256, input_shape=d.input_shape))
-    m.add(RNN(256, input_shape=d.input_shape))
-    m.add(RNN(256, input_shape=d.input_shape))
 
     m.add(Activation('softmax'))
     m.compile(loss='cce', optimizer=Adam())
     m.summary()
 
-    m.fit(dataset=d, epochs=1000, minibatch_size = 25, accuracy_threshold=0.96, early_stop_after = 30)
+    m.fit(dataset=d, epochs=1000, minibatch_size = 25, accuracy_threshold=0.95, early_stop_after = 30)
     
 #### CPU output (stacked RNNs)
-    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
-    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
-    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
-    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
-    RNN        :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  86825
-    Activation :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  0
-    Total # trainable parameters: 434125
+    RNN        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  87851
+    RNN        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  87851
+    RNN        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  87851
+    Activation :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  0
+    Total # trainable parameters: 263553
 
-    Epoch 01: ====================> loss: 67.07430 train_acc = 43.86% test_acc = 43.69% time: 18.24s
-    Epoch 02: ====================> loss: 33.96766 train_acc = 76.54% test_acc = 76.46% time: 18.17s
-    Epoch 03: ====================> loss: 14.29152 train_acc = 91.95% test_acc = 91.74% time: 18.20s
-    Epoch 04: ====================> loss: 7.30623 train_acc = 94.94% test_acc = 94.20% time: 17.82s
-    Epoch 05: ====================> loss: 5.45037 train_acc = 95.42% test_acc = 94.70% time: 17.81s
-    Epoch 06: ====================> loss: 4.60923 train_acc = 95.75% test_acc = 94.84% time: 18.28s
-    Epoch 07: ====================> loss: 4.04447 train_acc = 96.03% test_acc = 94.98% time: 18.19s
+    Epoch 01: ====================> loss: 59.83458 train_acc = 53.63% test_acc = 52.94% time: 18.58s
+    Epoch 02: ====================> loss: 29.94776 train_acc = 78.03% test_acc = 77.09% time: 18.40s
+    Epoch 03: ====================> loss: 16.57419 train_acc = 89.55% test_acc = 88.94% time: 18.29s
+    Epoch 04: ====================> loss: 10.08636 train_acc = 93.15% test_acc = 92.35% time: 18.21s
+    Epoch 05: ====================> loss: 7.37533 train_acc = 94.12% test_acc = 93.23% time: 18.14s
+    Epoch 06: ====================> loss: 6.11092 train_acc = 94.71% test_acc = 93.62% time: 17.97s
+    Epoch 07: ====================> loss: 5.39310 train_acc = 95.22% test_acc = 93.95% time: 17.87s
     Terminating early (training accuracy threshold reached)
-    Accuracy: Maximum=94.98%; With optimal loss=94.98%
+    Accuracy: Maximum=93.95%; With optimal loss=93.95%
     
 #### Some sequence outputs
     X = ences its input stream through output units connected to act
