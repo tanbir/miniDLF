@@ -1,5 +1,5 @@
-# miniDLF 
-(Mini Deep Learning Framework)
+# miniDLF (Mini Deep Learning Framework)
+From scratch using Numpy 
 
 # Introduction
 
