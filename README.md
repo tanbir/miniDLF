@@ -15,7 +15,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 * [4 Model function: Sequential](#4-model-function-sequential)    
 * [5 Some example runs](#5-some-example-runs)    
   * [5.1 Multilayer Perceptron using MNIST](#51-multilayer-perceptron-using-mnist)
-  * [5.2 Convolutional Network using MNIST](#51-convolutional-network-using-mnist)
+  * [5.2 Convolutional Network using MNIST](#52-convolutional-network-using-mnist)
 
 # 1 Network architectures
 * Feedforward Neural Network 
