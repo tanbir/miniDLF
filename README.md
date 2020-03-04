@@ -23,7 +23,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 * Convolutional Neural Network 
 * Recurrent Neural Network
 * Gated Recurrent Units (GRU)
-* Long Short Term Memomry Units (LSTM)
+* Long Short-Term Memory Units (LSTM)
 
 # 2 Layers
 ## 2.1 Core layers
