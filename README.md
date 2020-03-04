@@ -211,9 +211,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     from miniDLF.optimizers import Adam
     from miniDLF.datasets import TEXT2SEQ
 
-
-
-    d = TEXT2SEQ('./data/TEXT/basic_rnn.txt', 60)
+    d = TEXT2SEQ('./data/TEXT/basic_rnn_from_wiki.txt', 60)
 
     m = Sequential() 
     m.add(RNN(256, input_shape=d.input_shape))
