@@ -325,7 +325,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     
     m.fit(dataset=d, epochs=1000, minibatch_size = 25, accuracy_threshold=0.95, early_stop_after = 30)
     
-#### CPU output (Stacked GRUs)    
+#### CPU output (GRUs)    
     GRU        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  241451
     Activation :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  0
     Total # trainable parameters: 241451
