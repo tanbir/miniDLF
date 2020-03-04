@@ -235,13 +235,13 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Activation :   input_shape =  [60 41]  output_shape =  [60 41]  trainable parameters =  0
     Total # trainable parameters: 434125
 
-    Epoch 01: ==========================> loss: 67.07430 train_acc = 43.86% test_acc = 43.69% time: 18.24s
-    Epoch 02: ==========================> loss: 33.96766 train_acc = 76.54% test_acc = 76.46% time: 18.17s
-    Epoch 03: ==========================> loss: 14.29152 train_acc = 91.95% test_acc = 91.74% time: 18.20s
-    Epoch 04: ==========================> loss: 7.30623 train_acc = 94.94% test_acc = 94.20% time: 17.82s
-    Epoch 05: ==========================> loss: 5.45037 train_acc = 95.42% test_acc = 94.70% time: 17.81s
-    Epoch 06: ==========================> loss: 4.60923 train_acc = 95.75% test_acc = 94.84% time: 18.28s
-    Epoch 07: ==========================> loss: 4.04447 train_acc = 96.03% test_acc = 94.98% time: 18.19s
+    Epoch 01: ====================> loss: 67.07430 train_acc = 43.86% test_acc = 43.69% time: 18.24s
+    Epoch 02: ====================> loss: 33.96766 train_acc = 76.54% test_acc = 76.46% time: 18.17s
+    Epoch 03: ====================> loss: 14.29152 train_acc = 91.95% test_acc = 91.74% time: 18.20s
+    Epoch 04: ====================> loss: 7.30623 train_acc = 94.94% test_acc = 94.20% time: 17.82s
+    Epoch 05: ====================> loss: 5.45037 train_acc = 95.42% test_acc = 94.70% time: 17.81s
+    Epoch 06: ====================> loss: 4.60923 train_acc = 95.75% test_acc = 94.84% time: 18.28s
+    Epoch 07: ====================> loss: 4.04447 train_acc = 96.03% test_acc = 94.98% time: 18.19s
     Terminating early (training accuracy threshold reached)
     Accuracy: Maximum=94.98%; With optimal loss=94.98%
     
@@ -336,41 +336,34 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 ### GRU
     import numpy as np
     from miniDLF.models import Sequential
-    from miniDLF.layers import RNN, GRU, LSTM, Activation
+    from miniDLF.layers import GRU, Activation
     from miniDLF.optimizers import Adam
     from miniDLF.datasets import TEXT2SEQ
 
-    d = TEXT2SEQ('./data/TEXT/basic_rnn.txt', 50)
+    d = TEXT2SEQ('./data/TEXT/basic_rnn_from_wiki.txt', 60)
 
     m = Sequential() 
-    m.add(GRU(512, input_shape=d.input_shape))
+    m.add(GRU(256, input_shape=d.input_shape))
+    m.add(GRU(256, input_shape=d.input_shape))
+
     m.add(Activation('softmax'))
     m.compile(loss='cce', optimizer=Adam())
     m.summary()
     
-    m.fit(dataset=d, epochs=1000, minibatch_size = 50, accuracy_threshold=0.96, early_stop_after = 30)
+    m.fit(dataset=d, epochs=1000, minibatch_size = 25, accuracy_threshold=0.96, early_stop_after = 30)
     
-#### CPU output (GRU)    
-    GRU        :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  871977
-    Activation :   input_shape =  [50 41]  output_shape =  [50 41]  trainable parameters =  0
-    Total # trainable parameters: 871977
+#### CPU output (Stacked GRUs)    
+    GRU        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  241451
+    GRU        :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  241451
+    Activation :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  0
+    Total # trainable parameters: 482902
     
-    Epoch 01: ==========================> loss: 129.07562 train_acc = 46.60% test_acc = 45.24% time: 22.44s
-    Epoch 02: ==========================> loss: 80.18906 train_acc = 65.20% test_acc = 63.57% time: 22.29s
-    Epoch 03: ==========================> loss: 51.41698 train_acc = 80.12% test_acc = 78.98% time: 21.96s
-    Epoch 04: ==========================> loss: 31.13936 train_acc = 90.30% test_acc = 89.98% time: 23.05s
-    Epoch 05: ==========================> loss: 18.97702 train_acc = 93.50% test_acc = 93.14% time: 22.12s
-    Epoch 06: ==========================> loss: 13.28802 train_acc = 94.59% test_acc = 94.17% time: 22.40s
-    Epoch 07: ==========================> loss: 10.79545 train_acc = 94.89% test_acc = 94.29% time: 22.07s
-    Epoch 08: ==========================> loss: 9.43124 train_acc = 95.25% test_acc = 94.79% time: 22.42s
-    Epoch 09: ==========================> loss: 8.62526 train_acc = 95.50% test_acc = 94.97% time: 22.21s
-    Epoch 10: ==========================> loss: 8.04648 train_acc = 95.48% test_acc = 95.05% time: 22.24s
-    Epoch 11: ==========================> loss: 7.63974 train_acc = 95.73% test_acc = 95.15% time: 23.60s
-    Epoch 12: ==========================> loss: 7.30892 train_acc = 95.79% test_acc = 95.32% time: 21.91s
-    Epoch 13: ==========================> loss: 7.06969 train_acc = 95.84% test_acc = 95.32% time: 22.05s
-    Epoch 14: ==========================> loss: 6.83909 train_acc = 95.91% test_acc = 95.31% time: 21.87s
-    Epoch 15: ==========================> loss: 6.68061 train_acc = 95.94% test_acc = 95.29% time: 21.81s
-    Epoch 16: ==========================> loss: 6.49831 train_acc = 95.98% test_acc = 95.29% time: 23.24s
-    Epoch 17: ==========================> loss: 6.39038 train_acc = 96.03% test_acc = 95.28% time: 22.56s
+    Epoch 01: ====================> loss: 60.10123 train_acc = 60.37% test_acc = 59.69% time: 36.34s
+    Epoch 02: ====================> loss: 24.72527 train_acc = 87.19% test_acc = 86.33% time: 36.33s
+    Epoch 03: ====================> loss: 10.45947 train_acc = 94.04% test_acc = 93.59% time: 37.30s
+    Epoch 04: ====================> loss: 6.34567 train_acc = 95.38% test_acc = 94.95% time: 37.26s
+    Epoch 05: ====================> loss: 4.87650 train_acc = 95.72% test_acc = 95.21% time: 36.91s
+    Epoch 06: ====================> loss: 4.23323 train_acc = 96.13% test_acc = 95.57% time: 36.89s
     Terminating early (training accuracy threshold reached)
-    Accuracy: Maximum=95.32%; With optimal loss=95.28%
+    Accuracy: Maximum=95.57%; With optimal loss=95.57%
+              
