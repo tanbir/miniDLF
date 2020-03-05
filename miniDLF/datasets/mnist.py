@@ -21,7 +21,7 @@ class MNIST(Dataset):
                 
             test = np.array(test[0]), np.array([self.__onehot__(x, n_classes) for x in test[1]])    
                 
-            Dataset.__init__(self, train, None, test, self.n_classes, self.input_shape)
+            Dataset.__init__(self, train, None, test, self.input_shape)
             
             tm = np.mean(self.train_x)
             self.train_x = np.array(self.train_x) - tm
