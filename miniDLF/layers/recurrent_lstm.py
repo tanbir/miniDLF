@@ -153,7 +153,7 @@ class LSTM(Layer):
             ctanh = self.tanh.forward(self.c[:, t])
             dy_t = delta[:, t]
 
-            dh_t = dy_t @ self.params['Why'].T + self.dh_next * 0.01          
+            dh_t = dy_t @ self.params['Why'].T + self.dh_next           
             
             dc_t = dh_t * self.o[:, t] * (1.0 - ctanh**2) + self.dc_next            
             
@@ -199,7 +199,8 @@ class LSTM(Layer):
             dHg = dg_t @ self.params['Whg'].T 
             dHo = do_t @ self.params['Who'].T   
             
-            self.dh_next = (dHo + dHf + dHi + dHg)            
+            self.dh_next = (dHo + dHf + dHi + dHg)      
+            self.dh_next = np.clip(self.dh_next, -0.001, 0.001)
                         
             self.dc_next = self.f[:, t] * dc_t                                      
         return dX, None, None
