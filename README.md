@@ -332,14 +332,14 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Activation :   input_shape =  [60 43]  output_shape =  [60 43]  trainable parameters =  0
     Total # trainable parameters: 241451
     
-    Epoch 01: ====================> loss: 61.40361 train_acc = 49.84% test_acc = 49.91% time: 18.78s
-    Epoch 02: ====================> loss: 36.44772 train_acc = 68.11% test_acc = 68.13% time: 18.70s
-    Epoch 03: ====================> loss: 23.07642 train_acc = 81.48% test_acc = 81.07% time: 19.51s
-    Epoch 04: ====================> loss: 14.29644 train_acc = 90.41% test_acc = 89.94% time: 21.21s
-    Epoch 05: ====================> loss: 9.26848 train_acc = 93.22% test_acc = 92.83% time: 19.77s
-    Epoch 06: ====================> loss: 6.98398 train_acc = 94.34% test_acc = 94.08% time: 19.18s
-    Epoch 07: ====================> loss: 5.96353 train_acc = 94.86% test_acc = 94.32% time: 21.44s
-    Epoch 08: ====================> loss: 5.32681 train_acc = 95.13% test_acc = 94.70% time: 20.39s
+    Epoch 01: ====================> loss: 61.59818 train_acc = 51.34% test_acc = 51.07% time: 18.96s
+    Epoch 02: ====================> loss: 36.63548 train_acc = 67.63% test_acc = 67.02% time: 18.50s
+    Epoch 03: ====================> loss: 23.26398 train_acc = 81.39% test_acc = 80.52% time: 18.76s
+    Epoch 04: ====================> loss: 14.56974 train_acc = 90.11% test_acc = 89.62% time: 19.42s
+    Epoch 05: ====================> loss: 9.51549 train_acc = 93.42% test_acc = 92.94% time: 18.90s
+    Epoch 06: ====================> loss: 7.01638 train_acc = 94.51% test_acc = 94.18% time: 19.05s
+    Epoch 07: ====================> loss: 5.83944 train_acc = 94.93% test_acc = 94.45% time: 18.81s
+    Epoch 08: ====================> loss: 5.14838 train_acc = 95.28% test_acc = 94.81% time: 18.43s
     Terminating early (training accuracy threshold reached)
-    Accuracy: Maximum=94.70%; With optimal loss=94.70%
+    Accuracy: Maximum=94.81%; With optimal loss=94.81%
               
