@@ -154,9 +154,7 @@ class Sequential(object):
             for j in range(num_train_minibatches):
                 minibatch = dataset.get_batch('train', j, minibatch_size)
                 self.__update_mini_batch__(minibatch)                
-                self.__progress__(j+1, num_train_minibatches, 20, '=')
-                #if (j+1) % int(num_train_minibatches/100.0 +1) == 0:    
-                #    print("=", end="")
+                self.__progress__(j+1, num_train_minibatches, 20, '=')                
             print(">", end=" ")
             training_accuracy = np.mean([self.evaluate(dataset.get_batch('train', j, minibatch_size)) 
                                          for j in range(num_train_minibatches)])    
