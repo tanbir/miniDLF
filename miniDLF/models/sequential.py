@@ -18,6 +18,7 @@ class Sequential(object):
         self.mode = None
         self.train_accuracies = []
         self.test_accuracies = []   
+        self.multi_label = False
                 
     def add(self, layer):
         self.layers.append(layer);     
@@ -136,6 +137,8 @@ class Sequential(object):
         best_loss = np.Infinity
         test_accuracy_with_best_loss = 0.0
         
+        self.regression = dataset.regression
+        
         num_train_minibatches = int(dataset.n_train / self.minibatch_size)
         self.num_train_minibatches = num_train_minibatches
         if dataset.validation_available == True:
@@ -155,45 +158,56 @@ class Sequential(object):
                 minibatch = dataset.get_batch('train', j, minibatch_size)
                 self.__update_mini_batch__(minibatch)                
                 self.__progress__(j+1, num_train_minibatches, 20, '=')                
-            print(">", end=" ")
-            training_accuracy = np.mean([self.evaluate(dataset.get_batch('train', j, minibatch_size)) 
-                                         for j in range(num_train_minibatches)])    
-            self.train_accuracies.append(training_accuracy)
+            print(">", end=" ")           
+            
+            
+            if self.regression == False:
+                training_accuracy = np.mean([self.evaluate(dataset.get_batch('train', j, minibatch_size)) 
+                                             for j in range(num_train_minibatches)])    
+                self.train_accuracies.append(training_accuracy)            
+                
             t = time.time()-start_time
             
             if dataset.test_available == True:
- 
-                test_accuracy = np.mean([self.evaluate(dataset.get_batch('test', j, minibatch_size)) 
-                                         for j in range(num_test_minibatches)])
-                self.test_accuracies.append(test_accuracy)                                
-                print("loss: {0:.5f} train_acc = {1:.2%} test_acc = {2:.2%} time: {3:.2f}s".format(self.loss, 
-                                                                                                   training_accuracy,
-                                                                                                   test_accuracy,                                                                                                                              t))               
-                if(test_accuracy >= best_test_accuracy):
-                    best_test_accuracy = test_accuracy
-                       
+                if self.regression == False:
+                    test_accuracy = np.mean([self.evaluate(dataset.get_batch('test', j, minibatch_size)) 
+                                             for j in range(num_test_minibatches)])
+            
+                    self.test_accuracies.append(test_accuracy)                                
+                    print("loss: {0:.5f} train_acc = {1:.2%} test_acc = {2:.2%} time: {3:.2f}s".format(self.loss, 
+                                                                                                       training_accuracy,
+                                                                                                       test_accuracy,                                                                                                                              t))               
+                    if(test_accuracy >= best_test_accuracy):
+                        best_test_accuracy = test_accuracy
+                else:
+                    print("loss: {0:.5f} time: {1:.2f}s".format(self.loss, t))               
             
             if self.loss < best_loss:
                 # Optimal loss scenario
                 best_loss = self.loss
                 num_umimproved_epochs = 0
-                test_accuracy_with_best_loss = test_accuracy
+                if self.regression == False:
+                    test_accuracy_with_best_loss = test_accuracy
             elif self.loss >= prev_loss:
                 num_umimproved_epochs += 1 
             elif self.loss < prev_loss:
                 num_umimproved_epochs = 0 
+                
+            prev_loss = self.loss
             
             if num_umimproved_epochs >= early_stop_after and i<epochs-1:
                 print('Terminating early')
                 break
+        
+            if self.regression == False:
+                if training_accuracy >= accuracy_threshold:
+                    print('Terminating early (training accuracy threshold reached)')
+                    break 
             
-            if training_accuracy >= accuracy_threshold:
-                print('Terminating early (training accuracy threshold reached)')
-                break 
             
-            prev_loss = self.loss
-        print("Accuracy: Maximum={0:.2%}; With optimal loss={1:.2%}".format(best_test_accuracy, 
-                                                                            test_accuracy_with_best_loss))
+        if self.regression == False:
+            print("Accuracy: Maximum={0:.2%}; With optimal loss={1:.2%}".format(best_test_accuracy, 
+                                                                                test_accuracy_with_best_loss))
     
     def evaluate(self, data):  
         X, y = data
