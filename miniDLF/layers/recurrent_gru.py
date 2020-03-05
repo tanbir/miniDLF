@@ -132,7 +132,7 @@ class GRU(Layer):
             
             
             ########################################################
-            dh_t = dy_t @ self.params['Why'].T + self.dh_next * 0.01
+            dh_t = dy_t @ self.params['Why'].T + self.dh_next 
             self.grads['Why'] += self.h[:, t].T @ dy_t
             self.grads['by'] += np.sum(dy_t, axis=0)
                  
@@ -178,6 +178,7 @@ class GRU(Layer):
             dX[:, t] = (dXr + dXu)
             
             self.dh_next = ((1.0 - self.u[:, t]) * dh_t + self.r[:, t] * dHc + dHr + dHu)
+            self.dh_next = np.clip(self.dh_next, -0.001, 0.001)
         return dX, None, None
                 
     def update_params(self):
