@@ -18,7 +18,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 * [5 Some example runs](#5-some-example-runs)    
   * [5.1 Multilayer Perceptron using MNIST](#51-multilayer-perceptron-using-mnist)
   * [5.2 Convolutional Network using MNIST](#52-convolutional-network-using-mnist)
-  * [5.3 Recurrent Networks using RNN, LSTM and GRU](#53-recurrent-neural-networks)
+  * [5.3 Recurrent Networks with RNN, LSTM and GRU](#53-recurrent-neural-networks)
   * [5.4 Autoencoders](#54-autoencoders)
 
 # 1 Network architectures
