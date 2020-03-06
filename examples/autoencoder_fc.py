@@ -1,7 +1,7 @@
 from miniDLF.models import Sequential, Autoencoder
 
 from miniDLF.layers import Dense, Activation
-from miniDLF.datasets import Dataset, MNIST
+from miniDLF.datasets import Dataset
 import gzip, pickle
 import numpy as np
 
