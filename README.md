@@ -12,7 +12,8 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * [2.2 Recurrent layers](#22-recurrent-layers)  
   * [2.3 Activation layers](#23-activations)    
 * [3 Optimization algorithms](#3-optimization-algorithms)    
-* [4 Model function: Sequential](#4-model-function-sequential)    
+* [4 Model functions](#4-model-functions)
+  * [4.1 Sequential](#41-sequential)
 * [5 Some example runs](#5-some-example-runs)    
   * [5.1 Multilayer Perceptron using MNIST](#51-multilayer-perceptron-using-mnist)
   * [5.2 Convolutional Network using MNIST](#52-convolutional-network-using-mnist)
@@ -66,7 +67,8 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Nadam     | `Nadam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`   |
 | AMSGrad   | `AMSGrad(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)` |
 
-# 4 Model function: Sequential
+# 4 Model functions 
+## 4.1 Sequential
 | Function | Description                                                                           |
 |:---------|:--------------------------------------------------------------------------------------|
 | Add      | `.add(layer)`                                                                         |
@@ -79,6 +81,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 * The parameter `optimizer` in the `fit(...)` function can be either 
   * an object with specified or default parameters or 
   * a value from 'sgd'/'adagrad'/'rmsprop'/'adam'/'nadam'/'amsgrad'/'adadelta'
+
 
 # 5 Some example runs
 ## 5.1 Multilayer Perceptron using MNIST
