@@ -18,7 +18,7 @@ class Sequential(object):
         self.mode = None
         self.train_accuracies = []
         self.test_accuracies = []   
-        self.regression = False
+        
                 
     def add(self, layer):
         self.layers.append(layer);     
@@ -126,7 +126,8 @@ class Sequential(object):
             epochs,       # number of trials           
             accuracy_threshold = 1.0, 
             minibatch_size = 10,
-            early_stop_after = 5):
+            early_stop_after = 5,
+            regression=False):
 
         self.minibatch_size = minibatch_size
         self.train_accuracies = []
@@ -137,7 +138,7 @@ class Sequential(object):
         best_loss = np.Infinity
         test_accuracy_with_best_loss = 0.0
         
-        self.regression = dataset.regression
+        
         
         num_train_minibatches = int(dataset.n_train / self.minibatch_size)
         self.num_train_minibatches = num_train_minibatches
@@ -161,7 +162,7 @@ class Sequential(object):
             print(">", end=" ")           
             
             
-            if self.regression == False:
+            if regression == False:
                 training_accuracy = np.mean([self.evaluate(dataset.get_batch('train', j, minibatch_size)) 
                                              for j in range(num_train_minibatches)])    
                 self.train_accuracies.append(training_accuracy)            
@@ -169,7 +170,7 @@ class Sequential(object):
             t = time.time()-start_time
             
             if dataset.test_available == True:
-                if self.regression == False:
+                if regression == False:
                     test_accuracy = np.mean([self.evaluate(dataset.get_batch('test', j, minibatch_size)) 
                                              for j in range(num_test_minibatches)])
             
@@ -186,7 +187,7 @@ class Sequential(object):
                 # Optimal loss scenario
                 best_loss = self.loss
                 num_umimproved_epochs = 0
-                if self.regression == False:
+                if regression == False:
                     test_accuracy_with_best_loss = test_accuracy
             elif self.loss >= prev_loss:
                 num_umimproved_epochs += 1 
@@ -199,13 +200,13 @@ class Sequential(object):
                 print('Terminating early')
                 break
         
-            if self.regression == False:
+            if regression == False:
                 if training_accuracy >= accuracy_threshold:
                     print('Terminating early (training accuracy threshold reached)')
                     break 
             
             
-        if self.regression == False:
+        if regression == False:
             print("Accuracy: Maximum={0:.2%}; With optimal loss={1:.2%}".format(best_test_accuracy, 
                                                                                 test_accuracy_with_best_loss))
     
