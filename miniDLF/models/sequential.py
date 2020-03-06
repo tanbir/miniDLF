@@ -4,7 +4,6 @@ import copy
 from miniDLF.layers import *
 from miniDLF.optimizers import *
 from miniDLF.losses import *
-import tqdm
 
 class Sequential(object):
     def __init__(self):
