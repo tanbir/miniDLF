@@ -18,6 +18,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * [5.1 Multilayer Perceptron using MNIST](#51-multilayer-perceptron-using-mnist)
   * [5.2 Convolutional Network using MNIST](#52-convolutional-network-using-mnist)
   * [5.3 Recurrent Networks using RNN, LSTM and GRU](#53-recurrent-neural-networks)
+  * [5.4 Autoencoders](#54-autoencoders)
 
 # 1 Network architectures
 * Feedforward Neural Network 
@@ -346,3 +347,40 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Terminating early (training accuracy threshold reached)
     Accuracy: Maximum=94.81%; With optimal loss=94.81%
               
+## 5.4 Autoencoders
+### Fully connected autoencoder
+    from miniDLF.models import Sequential, Autoencoder
+
+    from miniDLF.layers import Dense, Activation
+    from miniDLF.datasets import Dataset, MNIST
+    import gzip, pickle
+    import numpy as np
+
+    enc = Sequential()
+    enc.add(Dense(100, input_shape=(784,)))
+    enc.add(Activation('leaky_relu'))
+    enc.add(Dense(64))
+
+
+    dec = Sequential()
+    dec.add(Dense(64, input_shape=(64,)))
+    dec.add(Activation('leaky_relu'))
+    dec.add(Dense(784))
+    dec.add(Activation('sigmoid'))
+
+    ae = Autoencoder(enc, dec, loss='bce', optimizer='adam')
+    ae.summary()
+
+
+    f = gzip.open('./data/MNIST/mnist.pkl.gz', 'rb')
+    train, validation, test = pickle.load(f, encoding='latin1')  
+    t0 = np.array(train[0])
+    v0 = np.array(validation[0])            
+    c0 = np.concatenate((t0, v0), axis=0)    
+    train = c0, c0
+
+    test = np.array(test[0]), np.array(test[0])    
+
+    d = Dataset(train, None, test, (784,))
+
+    ae.fit(dataset=d, epochs=100, minibatch_size = 256, accuracy_threshold=0.96, early_stop_after = 10)
