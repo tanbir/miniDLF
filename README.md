@@ -14,6 +14,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 * [3 Optimization algorithms](#3-optimization-algorithms)    
 * [4 Model functions](#4-model-functions)
   * [4.1 Sequential](#41-sequential)
+  * [4.2 Autoencoder](#42-autoencoder)
 * [5 Some example runs](#5-some-example-runs)    
   * [5.1 Multilayer Perceptron using MNIST](#51-multilayer-perceptron-using-mnist)
   * [5.2 Convolutional Network using MNIST](#52-convolutional-network-using-mnist)
@@ -83,6 +84,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * an object with specified or default parameters or 
   * a value from 'sgd'/'adagrad'/'rmsprop'/'adam'/'nadam'/'amsgrad'/'adadelta'
 
+## 4.2 Autoencoder
 
 # 5 Some example runs
 ## 5.1 Multilayer Perceptron using MNIST
