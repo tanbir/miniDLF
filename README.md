@@ -19,7 +19,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * [5.1 Multilayer Perceptron using MNIST](#51-multilayer-perceptron-using-mnist)
   * [5.2 Convolutional Network using MNIST](#52-convolutional-network-using-mnist)
   * [5.3 Recurrent Networks with RNN, LSTM and GRU](#53-recurrent-neural-networks)
-  * [5.4 Autoencoders](#54-autoencoders)
+  * [5.4 Autoencoders](#54-autoencoders)   
 
 # 1 Network architectures
 * Feedforward Neural Network 
@@ -359,7 +359,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
     Accuracy: Maximum=94.81%; With optimal loss=94.81%
               
 ## 5.4 Autoencoders
-### Fully connected autoencoder
+### Fully connected deep autoencoder
     from miniDLF.models import Sequential, Autoencoder
 
     from miniDLF.layers import Dense, Activation
