@@ -12,7 +12,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
   * [2.2 Recurrent layers](#22-recurrent-layers)  
   * [2.3 Activation layers](#23-activations)    
 * [3 Optimization algorithms](#3-optimization-algorithms)    
-* [4 Model functions](#4-model-functions)
+* [4 Model classes](#4-model-classes)
   * [4.1 Sequential](#41-sequential)
   * [4.2 Autoencoder](#42-autoencoder)
 * [5 Some example runs](#5-some-example-runs)    
@@ -69,7 +69,7 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Nadam     | `Nadam(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)`   |
 | AMSGrad   | `AMSGrad(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)` |
 
-# 4 Model functions 
+# 4 Model classes 
 ## 4.1 Sequential
 | Function | Description                                                                           |
 |:---------|:--------------------------------------------------------------------------------------|
