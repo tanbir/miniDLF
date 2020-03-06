@@ -67,12 +67,12 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | AMSGrad   | `AMSGrad(lr=0.001, decay=1e-6, beta_1=0.9, beta_2=0.999, epsilon=1e-6)` |
 
 # 4 Model function: Sequential
-| Function | Description                                                                       |
-|:---------|:----------------------------------------------------------------------------------|
-| Add      | `.add(layer)`                                                                     |
-| Compile  | `.compile(loss = 'cce', optimizer='adam')`                                        |
-| Summary  | `.summary()`                                                                      |
-| Train    | `.fit(dataset, epochs, minibatch_size = 10, early_stop_after = 5)`                |
+| Function | Description                                                                           |
+|:---------|:--------------------------------------------------------------------------------------|
+| Add      | `.add(layer)`                                                                         |
+| Compile  | `.compile(loss = 'cce', optimizer='adam')`                                            |
+| Summary  | `.summary()`                                                                          |
+| Train    | `.fit(dataset, epochs, minibatch_size = 10, early_stop_after = 5, regression=False)`  |
 
 * The parameter `layer` in the `add(...)` function is a layer-type object 
 * The parameter `loss` in the `compile(...)` function is one of 'mse' / 'cce' / 'bce'
