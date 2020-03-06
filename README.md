@@ -94,11 +94,6 @@ This is a humble attempt (inspired by [Stanford CS class CS231n](http://cs231n.g
 | Train             | `.fit(dataset, epochs, minibatch_size = 10, early_stop_after = 5, regression=True)`   |
 | Encode            | `.encode(X)`                                                                          |
 | Decode            | `.decode(encoded_X)`                                                                  |
-
-* The parameter `loss` in the `Autoencoder(...)` is one of 'mse' / 'bce'
-* The parameter `optimizer` in the `Autoencoder(...)` can be either 
-  * an object with specified or default parameters or 
-  * a value from 'sgd'/'adagrad'/'rmsprop'/'adam'/'nadam'/'amsgrad'/'adadelta'
   
 # 5 Some example runs
 ## 5.1 Multilayer Perceptron using MNIST
