@@ -18,7 +18,7 @@ class Sequential(object):
         self.mode = None
         self.train_accuracies = []
         self.test_accuracies = []   
-        self.multi_label = False
+        self.regression = False
                 
     def add(self, layer):
         self.layers.append(layer);     
