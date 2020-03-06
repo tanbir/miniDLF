@@ -7,7 +7,7 @@ class Autoencoder(object):
         self.loss = loss
         self.optimizer = optimizer
         
-        self.autoencoder = self.build_autoencoder()        
+        self.autoencoder = self.__build_autoencoder__()        
     
     def set_encoder(self, model):
         self.encoder = model        
@@ -15,14 +15,14 @@ class Autoencoder(object):
     def set_decoder(self, model):
         self.decoder = model
     
-    def build_autoencoder(self):
+    def __build_autoencoder__(self):
         m = Sequential()
         for i in range(self.encoder.nLayers):
             m.add(self.encoder.layers[i])
         for i in range(self.decoder.nLayers):
             m.add(self.decoder.layers[i])
         m.compile(self.loss, self.optimizer)
-        return m 
+        return m
 
     def summary(self):
         self.autoencoder.summary()
