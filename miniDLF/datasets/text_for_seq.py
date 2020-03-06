@@ -11,7 +11,7 @@ class TEXT2SEQ(Dataset):
         self.txt = f.read()        
         X, y = self.get_Xy(self.txt, timesteps)
         X_train, X_test, y_train, y_test = self.train_test_split(X, y, test_size=0.2)
-        Dataset.__init__(self, [X_train, y_train], None, [np.array(X_test), np.array(y_test)], 0, input_shape=(X.shape[1], X.shape[2]))
+        Dataset.__init__(self, [X_train, y_train], None, [np.array(X_test), np.array(y_test)], input_shape=(X.shape[1], X.shape[2]))
         
         self.input_shape = (X.shape[1], X.shape[2])
         self.n_classes = X.shape[2]

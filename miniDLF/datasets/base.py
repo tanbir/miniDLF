@@ -6,8 +6,7 @@ import sys
 import time
 
 class Dataset(object):
-    def __init__(self, train, validation, test, input_shape=None, regression=False):
-        self.regression = regression
+    def __init__(self, train, validation, test, input_shape=None):
         self.train_x = train[0]         
         self.train_y = train[1]                        
         self.n_train = len(train[0])
