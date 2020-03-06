@@ -32,4 +32,4 @@ test = np.array(test[0]), np.array(test[0])
                
 d = Dataset(train, None, test, (784,))
 
-ae.fit(dataset=d, epochs=100, minibatch_size = 256, accuracy_threshold=0.96, early_stop_after = 10)
+ae.fit(dataset=d, epochs=1000, minibatch_size = 256, accuracy_threshold=0.96, early_stop_after = 10)
