@@ -22,20 +22,22 @@ class Autoencoder(object):
         for i in range(self.decoder.nLayers):
             m.add(self.decoder.layers[i])
         m.compile(self.loss, self.optimizer)
-        return m
+        return m  
 
     def summary(self):
         self.autoencoder.summary()
         
     def fit(self, 
-              dataset,  #   
-              epochs,       # number of trials           
-              accuracy_threshold = 1.0, 
-              minibatch_size = 10,
-              early_stop_after = 5):
+            dataset,  #   
+            epochs,       # number of trials           
+            minibatch_size = 10,
+            early_stop_after = 5):
         
-        self.autoencoder.fit(dataset, epochs, accuracy_threshold, 
-                             minibatch_size, early_stop_after, True)
+        self.autoencoder.fit(dataset=dataset, 
+                             epochs=epochs, 
+                             minibatch_size=minibatch_size, 
+                             early_stop_after=early_stop_after, 
+                             regression=True)
             
     def autoencode(self, X):
         a = X
